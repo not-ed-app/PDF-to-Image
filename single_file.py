@@ -8,11 +8,7 @@ from tkinter import Tk
 from tkinter.filedialog import askopenfilename
 from tqdm import tqdm
 from pdf2image import convert_from_path
-from pdf2image.exceptions import (
-    PDFInfoNotInstalledError,
-    PDFPageCountError,
-    PDFSyntaxError
-)
+
 
 # OPENING THE GUI FILE PICKER
 Tk().withdraw()
@@ -28,7 +24,7 @@ else:
     print("\nProcessing . . .")
 
 # PROVIDING THE ABSOLUTE PATH FOR POPPLER
-abs_poppler_path = os.path.abspath("_internal/poppler-0.68.0/bin")
+abs_poppler_path = os.path.abspath("_internal/poppler/bin")
 
 # CREATING FOLDER
 if not os.path.exists("workspace/output/single/"+file_name):
